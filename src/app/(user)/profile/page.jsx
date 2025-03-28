@@ -9,11 +9,11 @@ export default function ProfilePage() {
     return (
         <div className="">
             {/* Header */}
-            <div className="sticky top-0 bg-white w-full z-10 py-4 flex items-center">
+            <div className="app-header">
                 <button>
                     <img src="/images/menu_icon.svg" alt="menu" />
                 </button>
-                <img src="/images/logo_dark.png" alt="logo" className="mx-auto w-[82pt] h-[27pt]" />
+                <img src="/images/logo_dark.png" alt="logo" className="app-logo" />
                 <button onClick={() => router.push("/notification")}><img src="/images/notification_icon.svg" alt="Notification" className="" /> </button>
             </div>
 
@@ -126,25 +126,22 @@ export default function ProfilePage() {
             )}
             {activeTab === "publicaciones" && (
                 <div>
-                    <div className="bg-light-gray bg-opacity-40 rounded-lg p-3 mt-4">
-                        <div className="flex items-center space-x-2">
-                            <img src="/images/White_Tee.png" alt="User Avatar" className="w-10 h-10 rounded-full" />
+                    <div className="publications-container">
+                        <div className="publications-profile ">
+                            <img src="/images/White_Tee.png" alt="User Avatar" className="publications-avatar" />
                             <div>
-                                <p className="font-bold text-[12pt] leading-4 text-primary-black">iamsarah <span className="text-[10pt] font-medium opacity-40">2 days ago</span></p>
-                                <p className="text-[10pt] font-medium italic my-0 text-primary-black"> • Novata</p>
+                                <p className="publications-info">iamsarah <span className="publications-time">2 days ago</span></p>
+                                <p className="publications-role"> • Novata</p>
                             </div>
                         </div>
-                        <p className="text-[12pt] font-medium text-primary-black mt-2">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ex
-                            nibh, tincidunt eget urna eu, tempus varius nunc and Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ex
-                            nibh, tincidunt eget urna eu, tempus varius nunc
+                        <p className="publications-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc malesuada euismod finibus. Nullam ex nibh, tincidunt eget urna eu, tempus varius nunc. Nunc congue neque nunc, id mattis diam tincidunt vel. Praesent et libero at metus bibendum tincidunt. Proin consequat augue eget tempus faucibus. Aenean vitae neque sit amet eros varius finibus. Nam eu magna posuere, molestie risus id, fringilla diam. Vivamus viverra, massa a convallis suscipit, arcu nisl laoreet mi, vel accumsan orci quam et augue. Suspendisse nisl sem, congue non bibendum id, egestas efficitur nulla. Sed porta convallis justo ac convallis. Curabitur posuere nisi varius fringilla ultricies. Vivamus posuere eu justo ut consequat. Nunc euismod ligula quis metus facilisis hendrerit.
                         </p>
-                        <div className="flex w-full bg-light-gray justify-center space-x-2 rounded-2xl mt-5 h-[40pt]">
-                            <button className="flex items-center space-x-2">
-                                <img src="/images/unlike_icon.svg" alt="like_icon" className="w-5 h-5" /> <span className="font-medium text-sm">12</span>
+                        <div className="publications-actions">
+                            <button className="publications-action-button">
+                                <img src="/images/unlike_icon.svg" alt="like_icon" /> <span>12</span>
                             </button>
-                            <button className="flex items-center space-x-2">
-                                <img src="/images/comment_icon.svg" alt="like_icon" className="w-5 h-5" /> <span className="font-medium text-sm">12</span>
+                            <button className="publications-action-button">
+                                <img src="/images/comment_icon.svg" alt="like_icon" /> <span>12</span>
                             </button>
                         </div>
                     </div>

@@ -18,7 +18,7 @@ const FriendPage = () => {
         { id: 8, img: "/images/friend8.jpg", online: true },
     ];
     return (
-        <div>
+        <div className="flex flex-col h-full">
             <div className="sticky top-0 bg-white w-full z-10 py-4 flex items-center">
                 <button onClick={() => router.back()}>
                     <img src="/images/Back_Arrow_Icon.svg" alt="Back" />
@@ -31,9 +31,9 @@ const FriendPage = () => {
                     <img src="/images/search_icon.svg" className="password-icon-img pr-2" alt="search_icon" />
                 </div>
             </div>
-            <div className="flex flex-wrap xs:justify-around my-5 h-full overflow-y-auto gap-3">
+            <div className="flex flex-wrap xs:justify-around my-5 h-auto gap-3">
                 {friends.map((friend) => (
-                    <div key={friend.id} className="xs:w-[80pt] xs:h-[80pt] w-[50pt] h-[50pt] flex  relative">
+                    <div key={friend.id} className="xs:w-[80pt] xs:h-[80pt] w-[50pt] h-[50pt] flex relative">
                         <img
                             src={friend.img}
                             alt="Friend"

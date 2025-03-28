@@ -69,7 +69,7 @@ const Carousel = () => {
                     onChange={handleImageChange}
                 />
             </div>
-            <button onClick={() => router.push("/personal-details")} className="mx-5 main-button">Hecho</button>
+            <button onClick={() => router.push("/profile")} className="mx-5 main-button">Hecho</button>
 
         </>
     );

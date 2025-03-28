@@ -47,9 +47,9 @@ const Carousel = () => {
                         className={`silder-images ${index === currentIndex ? "opacity-100" : "opacity-0"}`}
                     />
                 ))}
-                <div className="close-button" onClick={() => router.push("/login")}>
+                <button className="close-button" onClick={() => router.push("/login")}>
                     <img src="/images/close_icon.svg" alt="close" />
-                </div>
+                </button>
             </div>
             {/* Text for current slide */}
             <div className="intro-details">

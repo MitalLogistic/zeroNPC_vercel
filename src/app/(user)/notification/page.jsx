@@ -17,19 +17,19 @@ const Notification = () => {
     const router = useRouter();
     return (
         <div>
-            <div className="sticky top-0 bg-white w-full z-10 py-4 flex items-center">
+            <div className="app-header">
                 <button onClick={() => router.back()}>
                     <img src="/images/Back_Arrow_Icon.svg" alt="Back" />
                 </button>
-                <h1 className="mx-auto text-3xl font-bold">Notificaciones</h1>
+                <h1 className="app-title">Notificaciones</h1>
             </div>
             {notifications.map((notif) => (
-                <div key={notif.id} className="flex justify-between items-center p-3 border-b border-gray-300">
-                    <div className="flex items-center gap-4">
-                        <img src={notif.icon} alt="icon" className="w-8 h-8" />
-                        <p className="text-primary-black text-[14pt] font-normal line-clamp-2">{notif.message}</p>
+                <div key={notif.id} className="notification-container">
+                    <div className="notification-div">
+                        <img src={notif.icon} alt="icon" className="notification-images" />
+                        <p className="notification-message-text">{notif.message}</p>
                     </div>
-                    <span className="text-primary-gray text-[12pt] font-normal">{notif.time}</span>
+                    <span className="notification-time-text">{notif.time}</span>
                 </div>
             ))}
         </div>

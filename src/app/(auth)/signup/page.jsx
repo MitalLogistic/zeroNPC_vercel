@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 const Carousel = () => {
+    const [isShow, setIsShow] = useState(false);
     const router = useRouter();
     return (
         <>
@@ -18,14 +19,18 @@ const Carousel = () => {
                     <img src="/images/apple_icon.svg" className="mr-2" alt="google-login" />
                     Continuar con Apple
                 </button>
-                <button className="google-login-btn">
+                <button className="google-login-btn" onClick={() => setIsShow(!isShow)}>
                     Continuar con correo electrónico
                 </button>
                 <div className="signup-form">
-                    <h6 className="form-field-title">Correo electrónico</h6>
-                    <input type="email" name="email" placeholder="myemail@gmail.com" className="mt-2.5 mb-6 common-input" />
+                    {isShow && (
+                        <>
+                            <h6 className="form-field-title">Correo electrónico</h6>
+                            <input type="email" name="email" placeholder="myemail@gmail.com" className="mt-2.5 mb-6 common-input" />
 
-                    <button className="main-button" onClick={() => router.push("/password-details")}>Ponerse en marcha</button>
+                            <button className="main-button" onClick={() => router.push("/password-details")}>Ponerse en marcha</button>
+                        </>
+                    )}
                 </div>
 
                 <p className="login-text">¿Ya tienes una cuenta? <Link href="/login" className="login-signup-link">Inciar sesión</Link></p>

@@ -27,7 +27,7 @@ const SplashScreen = () => {
             <div className="logo-div">
                 <img src="/images/Logo.png" alt="logo" />
             </div>
-            {step && <p className="app-title title-animation ">comparte conexión</p>}
+            {step && <p className="auth-app-title title-animation ">comparte conexión</p>}
         </div>
     );
 };
