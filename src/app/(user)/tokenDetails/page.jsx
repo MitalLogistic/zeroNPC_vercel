@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 export default function ProductCard() {
     const router = useRouter();
     return (
-        <div className="py-4">
+        <div className="pb-4">
             {/* Image Section */}
             <div className="relative rounded-xl overflow-hidden">
                 <Image
@@ -21,31 +21,31 @@ export default function ProductCard() {
             </div >
 
             {/* Content */}
-            < div className="mt-4" >
-                <h2 className="text-lg text-gray-700">Camiseta</h2>
-                <p className="text-2xl font-bold text-black">Ghost</p>
+            < div className="my-4" >
+                <h2 className="sm:text-4xl text-3xl text-gray-700">Camiseta</h2>
+                <p className="sm:text-4xl text-3xl font-bold text-primary-black">Ghost</p>
 
                 {/* Tokens Section */}
-                <div className="mt-4">
-                    <p className="text-sm font-bold text-gray-700">Tokens disponibles</p>
+                <div className="my-4">
+                    <p className="text-base sm:text-xl font-bold text-gray-700">Tokens disponibles</p>
                     <div className="mt-2 flex gap-2 items-center bg-gray-100 p-3 rounded-lg">
                         <Image
-                            src="/images/token-icon.png" // Replace with actual token icon
+                            src="/images/Receive_token .svg" // Replace with actual token icon
                             alt="Token"
-                            width={30}
-                            height={30}
+                            width={40}
+                            height={40}
                         />
                         <Image
-                            src="/images/token-icon.png"
+                            src="/images/Receive_token .svg"
                             alt="Token"
-                            width={30}
-                            height={30}
+                            width={40}
+                            height={40}
                         />
                     </div>
                 </div>
 
                 {/* Button */}
-                <button className="mt-5 w-full bg-yellow-400 text-black font-semibold text-lg py-3 rounded-full shadow-md">
+                <button className="main-button">
                     Enviar token
                 </button>
             </div >
