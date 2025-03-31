@@ -25,7 +25,7 @@ export default function Wardrobe() {
                 <button onClick={() => router.back()}>
                     <img src="/images/Back_Arrow_Icon.svg" alt="Back" />
                 </button>
-                <h1 className="mx-auto text-3xl font-bold">Armario</h1>
+                <h1 className="mx-auto pr-4 text-3xl font-bold">Armario</h1>
             </div>
 
             {/* Grid Items */}

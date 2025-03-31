@@ -50,7 +50,7 @@ export default function ProfilePage() {
             </div>
 
             {activeTab === "general" && (
-                <div>
+                <div className="pb-28">
                     {/* Token Stats */}
                     <div className="grid xs:grid-cols-2 gap-3 mt-4">
                         <div className="bg-light-gray bg-opacity-40 p-4 rounded-2xl flex flex-col items-center">
@@ -65,7 +65,7 @@ export default function ProfilePage() {
                         </div>
                     </div>
 
-                    <div className="bg-light-gray bg-opacity-40 p-4 rounded-2xl mt-2 flex items-center justify-between">
+                    <div className="bg-light-gray bg-opacity-40 p-4 rounded-2xl mt-2 flex items-center justify-between" onClick={() => router.push("/friends")}>
                         <div className="flex flex-col xs:flex-row xs:items-center gap-3">
                             <div className="flex">
                                 <img src="/images/White_Tee@3x.png" alt="Friend 1" className="w-16 h-16 rounded-full border-2 border-white -ml-0" />
@@ -74,11 +74,11 @@ export default function ProfilePage() {
                             </div>
                             <p className="text-[14pt] font-bold xs:w-4">19 <span className="font-normal">Amigos</span></p>
                         </div>
-                        <button onClick={() => router.push("/friends")}><img src="/images/arrow_right.svg" alt="arrow_right" className="w-[10px]" /></button>
+                        <button><img src="/images/arrow_right.svg" alt="arrow_right" className="w-[10px]" /></button>
                     </div>
 
                     <h3 className="text-[16pt] font-bold mt-4 mb-2">Armario</h3>
-                    <div className="bg-light-gray bg-opacity-40 p-4 rounded-2xl">
+                    <div className="bg-light-gray bg-opacity-40 p-4 rounded-2xl" onClick={() => router.push("/wardrobe")}>
                         <p className="xs:text-[18pt] text-[16pt] font-medium">5 Prendas</p>
                         <div className="flex justify-between">
                             <div className="grid grid-cols-3 gap-3 mt-3 w-[90%]">
@@ -119,13 +119,13 @@ export default function ProfilePage() {
                                     </p>
                                 </div>
                             </div>
-                            <button onClick={() => router.push("/wardrobe")}><img src="/images/arrow_right.svg" alt="arrow_right" className="w-[10px]" /></button>
+                            <button><img src="/images/arrow_right.svg" alt="arrow_right" className="w-[10px]" /></button>
                         </div>
                     </div>
                 </div>
             )}
             {activeTab === "publicaciones" && (
-                <div>
+                <div className="pb-28">
                     <div className="publications-container">
                         <div className="publications-profile ">
                             <img src="/images/White_Tee.png" alt="User Avatar" className="publications-avatar" />
@@ -147,6 +147,7 @@ export default function ProfilePage() {
                     </div>
                 </div>
             )}
+            <BottomNavbar />
         </div>
     );
 }
