@@ -7,7 +7,7 @@ const Carousel = () => {
     const [isShow, setIsShow] = useState(false);
     const router = useRouter();
     return (
-        <>
+        <div className="p-5">
             <div className="login-div">
                 <img src="/images/logo_dark.png" alt="logo" />
                 <h1 className="welcome-auth-title">bienvenido</h1>
@@ -35,7 +35,7 @@ const Carousel = () => {
 
                 <p className="login-text">¿Ya tienes una cuenta? <Link href="/login" className="login-signup-link">Inciar sesión</Link></p>
             </div>
-        </>
+        </div>
     );
 };
 

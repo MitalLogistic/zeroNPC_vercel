@@ -4,12 +4,12 @@ import { useRouter } from "next/navigation";
 const Carousel = () => {
     const router = useRouter();
     return (
-        <>
+        <div className="p-5">
             <div className="login-div">
                 <img src="/images/logo_dark.png" alt="logo" className="w-[82pt] h-[27pt]" />
             </div>
             {/* Steps */}
-            <div className="px-5  pt-[10px] flex justify-center w-[390pt] gap-5">
+            <div className="pt-[10px] flex justify-center gap-5">
                 <div className="text-center">
                     <p className="text-black text-[20pt] leading-6 text-opacity-30 font-bold tracking-[-1pt]">paso</p>
                     <p className="text-black text-[30pt] text-opacity-30 font-extrabold leading-[37px]">1</p>
@@ -33,9 +33,9 @@ const Carousel = () => {
                 <input type="text" placeholder="Código postal" className="my-2.5 common-input !w-1/2" />
                 <input type="number" name="text" placeholder="Provincia" className="common-input" />
             </div>
-            <button onClick={() => router.push("/add-profile")} className="mx-5 main-button">Siguiente</button>
+            <button onClick={() => router.push("/add-profile")} className=" main-button">Siguiente</button>
 
-        </>
+        </div>
     );
 };
 

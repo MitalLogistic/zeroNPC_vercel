@@ -13,12 +13,12 @@ const Carousel = () => {
         }
     };
     return (
-        <>
+        <div className="p-5">
             <div className="login-div">
                 <img src="/images/logo_dark.png" alt="logo" className="w-[82pt] h-[27pt]" />
             </div>
             {/* Steps */}
-            <div className="px-5 pt-[10px] flex justify-end w-1/2 gap-5">
+            <div className=" pt-[10px] flex justify-start gap-5">
                 <div className="text-center">
                     <p className="text-black text-[12pt] text-opacity-30 leading-4 font-bold tracking-[-0.6pt]">paso</p>
                     <p className="text-black text-[20pt] text-opacity-30 font-extrabold leading-6">1</p>
@@ -69,9 +69,9 @@ const Carousel = () => {
                     onChange={handleImageChange}
                 />
             </div>
-            <button onClick={() => router.push("/profile")} className="mx-5 main-button">Hecho</button>
+            <button onClick={() => router.push("/profile")} className="main-button">Hecho</button>
 
-        </>
+        </div>
     );
 };
 

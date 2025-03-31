@@ -79,10 +79,10 @@ p{
   @apply w-3 h-3 rounded-full;
 }
 .next-progess-button{
-  @apply relative size-40;
+  @apply relative flex flex-col mx-auto size-40 ;
 }
 .progess-arrow-btn{
-  @apply text-white bg-neutral-700 font-medium rounded-full text-sm p-5 text-center inline-flex items-center;
+  @apply  bg-neutral-700 font-medium rounded-full text-sm p-5 text-center inline-flex items-center;
 }
 .progress-arrow-div{
   @apply absolute top-1/2 start-1/2 transform -translate-y-1/2 -translate-x-1/2;
@@ -90,7 +90,7 @@ p{
 
 /* login screen */
 .login-div{
-  @apply px-5 flex flex-col items-center justify-center pt-7;
+  @apply flex flex-col items-center justify-center;
 }
 .welcome-auth-title{
   @apply my-3 text-black font-bold text-3xl leading-7;
@@ -105,7 +105,7 @@ p{
   @apply block min-h-[250pt] w-full mt-20;
 }
 .signup-form{
-@apply block min-h-[300pt] pt-6 w-full;
+@apply block min-h-[250pt] pt-6 w-full;
 }
 .form-field-title{
   @apply mt-5 text-primary-black text-lg font-medium leading-4;
@@ -135,7 +135,7 @@ p{
   @apply mt-16 text-[16pt] tracking-normal font-semibold text-primary-black leading-4;
 }
 .login-form-bg{
-  @apply min-h-[362pt] bg-light-blue bg-opacity-40 rounded-2xl w-full m-4 px-6 py-10
+  @apply min-h-[362pt] bg-light-blue bg-opacity-40 rounded-2xl w-full my-5 px-5 py-10
 }
 
 /* upload Profile screen */
@@ -149,7 +149,7 @@ p{
   @apply text-[14pt] font-semibold text-magenta leading-4 hover:underline cursor-pointer;
 }
 .delete-icon{
-  @apply w-12 mx-auto mt-2;
+  @apply w-5 mx-auto mt-2;
 }
 .profile-div{
   @apply mt-[50pt] text-center;
@@ -184,7 +184,7 @@ p{
 
 /* App header */
 .app-header {
-  @apply sticky top-0 bg-white w-full z-10 py-4 flex items-center;
+  @apply sticky top-0 bg-white w-full z-10 py-4 flex items-center justify-between;
 }
 .app-title {
   @apply mx-auto text-3xl text-black font-bold;
@@ -195,7 +195,7 @@ p{
 
 /* Wardrobe Page */
 .wardrobe-items {
-  @apply grid xs:grid-cols-2 h-full w-full overflow-y-auto gap-4 p-4 text-xl flex-grow;
+  @apply grid xs:grid-cols-2 h-full w-full overflow-y-auto gap-4 p-4 pb-28 text-xl flex-grow;
 }
 .wardrobe-item-card {
   @apply w-full rounded-lg;
@@ -227,7 +227,7 @@ p{
 
 /* publications */
 .publications-container{
- @apply bg-light-gray bg-opacity-40 rounded-lg p-3 mt-4
+ @apply bg-light-gray bg-opacity-40 rounded-lg p-3 my-4;
 }
 .publications-profile {
   @apply flex items-center space-x-2;
