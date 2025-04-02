@@ -28,7 +28,7 @@ const Carousel = () => {
                             <h6 className="form-field-title">Correo electrónico</h6>
                             <input type="email" name="email" placeholder="myemail@gmail.com" className="mt-2.5 mb-6 common-input" />
 
-                            <button className="main-button" onClick={() => router.push("/password-details")}>Ponerse en marcha</button>
+                            <button className="main-button" onClick={() => router.push("/personal-details")}>Ponerse en marcha</button>
                         </>
                     )}
                 </div>
