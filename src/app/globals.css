@@ -181,10 +181,9 @@ p{
   @apply text-magenta font-semibold text-xl leading-6 mt-6;
 }
 
-
 /* App header */
 .app-header {
-  @apply sticky top-0 bg-white w-full z-10 py-4 flex items-center justify-between;
+  @apply sticky top-0 bg-white w-full z-10 p-4 flex items-center justify-between;
 }
 .app-title {
   @apply mx-auto text-3xl text-black font-bold;
@@ -195,7 +194,7 @@ p{
 
 /* Wardrobe Page */
 .wardrobe-items {
-  @apply grid xs:grid-cols-2 h-full w-full overflow-y-auto gap-4 p-4 pb-28 text-xl flex-grow;
+  @apply grid xs:grid-cols-2 h-full w-full overflow-y-auto gap-4 px-4 pb-28 text-xl flex-grow;
 }
 .wardrobe-item-card {
   @apply w-full rounded-lg;
@@ -227,13 +226,13 @@ p{
 
 /* publications */
 .publications-container{
- @apply bg-light-gray bg-opacity-40 rounded-lg p-3 my-4;
+ @apply bg-light-gray bg-opacity-40 rounded-lg my-4;
 }
 .publications-profile {
   @apply flex items-center space-x-2;
 }
 .publications-avatar {
-  @apply w-10 h-10 rounded-full;
+  @apply w-10 h-10 rounded-full object-cover;
 }
 .publications-info {
   @apply font-bold text-[12pt] leading-4 text-primary-black;
@@ -245,21 +244,113 @@ p{
   @apply text-[10pt] font-medium italic my-0 text-primary-black;
 }
 .publications-description {
-  @apply text-[12pt] font-medium text-primary-black mt-2;
+  @apply text-[12pt] font-medium text-primary-black mt-2 p-3;
 }
 .publications-actions {
-  @apply flex w-full bg-light-gray justify-center space-x-2 rounded-2xl mt-5 h-[40pt];
+  @apply flex w-full bg-light-gray justify-center space-x-5 rounded-2xl mt-5 h-[40pt];
 }
 .publications-action-button {
   @apply flex items-center space-x-2;
 }
 .publications-action-button img {
-  @apply w-5 h-5;
+  @apply w-6 h-6;
 }
 .publications-action-button span {
   @apply font-medium text-sm;
 }
 
+/* Profile page  */
+.profile-container { 
+  @apply relative w-[80pt] h-[80pt];
+}
+.profile-container img {
+  @apply w-full h-full rounded-full object-cover;
+}
+.profile-online-dot {
+  @apply absolute top-2 right-2 w-4 h-4 bg-cyan border-2 border-white rounded-full;
+}
+.profile-username{
+  @apply xs:text-[30pt] text-[20pt] font-bold leading-9
+}
+.profile-address{
+  @apply text-[14pt] font-medium leading-4;
+}
+
+.tabs-container {
+  @apply flex flex-wrap justify-center gap-4 mt-4 px-4;
+}
+.tab-button {
+  @apply text-[14pt] leading-4 font-medium text-primary-black;
+}
+.tab-button.active {
+  @apply border-b-2 border-black bg-yellow;
+}
+.token-status-container {
+  @apply pb-28 px-4;
+}
+.token-grid {
+  @apply grid xs:grid-cols-2 gap-3 mt-4;
+}
+.token-card {
+  @apply bg-light-gray bg-opacity-40 p-4 rounded-2xl flex flex-col items-center;
+}
+.token-card img {
+  @apply w-14 h-14;
+}
+.token-card p {
+  @apply text-lg font-bold;
+}
+.token-card span {
+  @apply text-gray-600 text-xs;
+}
+.friend-container {
+  @apply bg-light-gray bg-opacity-40 p-4 rounded-2xl mt-2 flex items-center justify-between cursor-pointer;
+}
+.friend-list {
+  @apply flex flex-col xs:flex-row xs:items-center gap-3;
+}
+.friend-images {
+  @apply flex;
+}
+.friend-images img {
+  @apply w-16 h-16 rounded-full object-cover border-2 border-white -ml-4 first:ml-0;
+}
+.friend-count {
+  @apply text-[14pt] font-bold xs:w-4;
+}
+.friend-count span {
+  @apply font-normal;
+}
+
+.wardrobe-container {
+  @apply bg-light-gray bg-opacity-40 p-4 rounded-2xl cursor-pointer;
+}
+
+.wardrobe-title {
+  @apply text-[16pt] font-bold mt-4 mb-2;
+}
+
+.wardrobe-text {
+  @apply xs:text-[18pt] text-[16pt] font-medium;
+}
+
+.wardrobe-grid {
+  @apply grid grid-cols-3 gap-3 mt-3 w-[90%];
+}
+
+.wardrobe-item p {
+  @apply xs:text-[12pt] text-[10pt] mt-1 text-gray-600 leading-tight;
+}
+
+.wardrobe-item span {
+  @apply font-bold text-black;
+}
+
+.arrow-button img {
+  @apply w-[10px];
+}
+
+/* BottomNavBar  */
 .bottombar{
   box-shadow: 0pt -3pt 6pt #00000029;
   position: fixed;
@@ -269,4 +360,21 @@ p{
   right: 0px;
   margin: 0 auto;
   max-width: 393pt;
+}
+
+.bottombar-container{
+  @apply w-full bottom-0 z-10 bg-white grid grid-cols-5 py-2 relative
+}
+.bottombar-icon{
+  @apply flex flex-col items-center text-xs font-medium py-3 xs:px-4 px-3 flex-1;
+}
+
+.bottombar-menu-name{
+  @apply text-[11pt] font-medium pt-2;
+}
+.scanner-btn{
+  @apply relative flex flex-col items-center flex-1
+}
+.scanner-div{
+  @apply absolute xs:bottom-7 bottom-10 left-1/2 transform -translate-x-1/2 xs:p-5 p-3 rounded-full bg-black shadow-lg;
 }

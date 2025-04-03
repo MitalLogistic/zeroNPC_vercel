@@ -14,75 +14,68 @@ export default function ProfilePage() {
                     <img src="/images/menu_icon.svg" alt="menu" />
                 </button>
                 <img src="/images/logo_dark.png" alt="logo" className="app-logo" />
-                <button onClick={() => router.push("/notification")}><img src="/images/notification_icon.svg" alt="Notification" className="" /> </button>
+                <button onClick={() => router.push("/notification")}><img src="/images/notification_icon.svg" alt="Notification" /> </button>
             </div>
 
             {/* Grid Items */}
             <div className="p-4 flex flex-col gap-4 items-center justify-center">
-                <div className="relative w-[80pt] h-[80pt]">
-                    <img src="/images/White_Tee.png" alt="profile" className="w-full h-full rounded-full object-cover" />
-                    <span className="absolute top-2 right-2 w-4 h-4 bg-cyan border-2 border-white rounded-full"></span>
+                <div className="profile-container">
+                    <img src="/images/profile.jpg" alt="profile" className="object-cover" />
+                    <span className="profile-online-dot"></span>
                 </div>
-                <h2 className="xs:text-[30pt] text-[20pt] font-bold leading-9">iamsarah</h2>
-                <p className="text-[14pt] font-medium leading-4">12FT. Navata</p>
+                <h2 className="profile-username">iamsarah</h2>
+                <p className="profile-address">12FT. Navata</p>
             </div>
 
             {/* Tabs */}
-            <div className="flex flex-wrap justify-center gap-4 mt-4">
-                {/* <button className="text-[14pt] leading-4 font-medium  border-b border-black bg-yellow text-primary-black">General</button> */}
+            <div className="tabs-container">
                 <button
-                    className={`text-[14pt] leading-4 font-medium text-primary-black ${activeTab === "general"
-                        ? "border-b-2 border-black bg-yellow"
-                        : ""
-                        }`}
+                    className={`tab-button ${activeTab === "general" ? "active" : ""}`}
                     onClick={() => setActiveTab("general")}
                 >
                     General
                 </button>
 
                 <button
-                    className={`text-[14pt] leading-4 font-medium text-primary-black ${activeTab === "publicaciones"
-                        ? "border-b-2 border-black bg-yellow"
-                        : ""
-                        }`}
+                    className={`tab-button ${activeTab === "publicaciones" ? "active" : ""}`}
                     onClick={() => setActiveTab("publicaciones")}
                 >Publicaciones</button>
             </div>
 
             {activeTab === "general" && (
-                <div className="pb-28">
+                <div className="token-status-container">
                     {/* Token Stats */}
-                    <div className="grid xs:grid-cols-2 gap-3 mt-4">
-                        <div className="bg-light-gray bg-opacity-40 p-4 rounded-2xl flex flex-col items-center">
-                            <img src="/images/send_token.svg" alt="Tokens Sent" className="w-14 h-14" />
-                            <p className="text-lg font-bold">18</p>
-                            <p className="text-gray-600 text-xs">Tokens enviados</p>
+                    <div className="token-grid">
+                        <div className="token-card">
+                            <img src="/images/send_token.svg" alt="Tokens Sent" />
+                            <p>18</p>
+                            <span>Tokens enviados</span>
                         </div>
-                        <div className="bg-light-gray bg-opacity-40 p-4 rounded-2xl flex flex-col items-center">
-                            <img src="/images/receive_token.svg" alt="Tokens Received" className="w-16 h-16" />
-                            <p className="text-lg font-bold">21</p>
-                            <p className="text-gray-600 text-xs">Tokens recibidos</p>
+                        <div className="token-card">
+                            <img src="/images/receive_token.svg" alt="Tokens Received" />
+                            <p>21</p>
+                            <span>Tokens recibidos</span>
                         </div>
                     </div>
 
-                    <div className="bg-light-gray bg-opacity-40 p-4 rounded-2xl mt-2 flex items-center justify-between" onClick={() => router.push("/friends")}>
-                        <div className="flex flex-col xs:flex-row xs:items-center gap-3">
-                            <div className="flex">
-                                <img src="/images/White_Tee@3x.png" alt="Friend 1" className="w-16 h-16 rounded-full border-2 border-white -ml-0" />
-                                <img src="/images/White_Tee@3x.png" alt="Friend 2" className="w-16 h-16 rounded-full border-2 border-white -ml-4" />
-                                <img src="/images/White_Tee@3x.png" alt="Friend 3" className="w-16 h-16 rounded-full border-2 border-white -ml-4" />
+                    <div className="friend-container" onClick={() => router.push("/friends")}>
+                        <div className="friend-list">
+                            <div className="friend-images">
+                                <img src="/images/profile.jpg" alt="Friend 1" />
+                                <img src="/images/profile.jpg" alt="Friend 2" />
+                                <img src="/images/profile.jpg" alt="Friend 3" />
                             </div>
-                            <p className="text-[14pt] font-bold xs:w-4">19 <span className="font-normal">Amigos</span></p>
+                            <p className="friend-count">19 <span>Amigos</span></p>
                         </div>
                         <button><img src="/images/arrow_right.svg" alt="arrow_right" className="w-[10px]" /></button>
                     </div>
 
-                    <h3 className="text-[16pt] font-bold mt-4 mb-2">Armario</h3>
-                    <div className="bg-light-gray bg-opacity-40 p-4 rounded-2xl" onClick={() => router.push("/wardrobe")}>
-                        <p className="xs:text-[18pt] text-[16pt] font-medium">5 Prendas</p>
+                    <h3 className="wardrobe-title ">Armario</h3>
+                    <div className="wardrobe-container" onClick={() => router.push("/wardrobe")}>
+                        <p className="wardrobe-text">5 Prendas</p>
                         <div className="flex justify-between">
-                            <div className="grid grid-cols-3 gap-3 mt-3 w-[90%]">
-                                <div>
+                            <div className="wardrobe-grid">
+                                <div className="wardrobe-item">
                                     <div className="shadow-md">
                                         <img
                                             src="/images/White_Tee@3x.png"
@@ -90,11 +83,10 @@ export default function ProfilePage() {
                                         // className="w-full max-w-[100pt] xs:h-[100pt] h-[70pt] object-cover"
                                         />
                                     </div>
-                                    <p className="xs:text-[12pt] text-[10pt] mt-1 text-gray-600 leading-tight">
-                                        Camiseta <br /><span className="font-bold text-black">Ghost</span>
+                                    <p> Camiseta <br /><span>Ghost</span>
                                     </p>
                                 </div>
-                                <div>
+                                <div className="wardrobe-item">
                                     <div className="shadow-md">
                                         <img
                                             src="/images/White_Tee@3x.png"
@@ -102,11 +94,10 @@ export default function ProfilePage() {
                                         // className="w-full max-w-[100pt] xs:h-[100pt] h-[70pt] object-cover"
                                         />
                                     </div>
-                                    <p className="xs:text-[12pt] text-[10pt] mt-1 text-gray-600 leading-tight">
-                                        Camiseta <br /><span className="font-bold text-black">Demonio</span>
+                                    <p>Camiseta <br /><span>Demonio</span>
                                     </p>
                                 </div>
-                                <div>
+                                <div className="wardrobe-item">
                                     <div className="shadow-md">
                                         <img
                                             src="/images/White_Tee@3x.png"
@@ -114,18 +105,17 @@ export default function ProfilePage() {
                                         // className="w-full max-w-[100pt] xs:h-[100pt] h-[70pt] object-cover"
                                         />
                                     </div>
-                                    <p className="xs:text-[12pt] text-[10pt] mt-1 text-gray-600 leading-tight">
-                                        Bolsa <br /><span className="font-bold text-black">ZNPC</span>
+                                    <p>Bolsa <br /><span>ZNPC</span>
                                     </p>
                                 </div>
                             </div>
-                            <button><img src="/images/arrow_right.svg" alt="arrow_right" className="w-[10px]" /></button>
+                            <button className="arrow-button"><img src="/images/arrow_right.svg" alt="arrow_right" className="w-[10px]" /></button>
                         </div>
                     </div>
                 </div>
             )}
             {activeTab === "publicaciones" && (
-                <div className="pb-28">
+                <div className="token-status-container">
                     <div className="publications-container">
                         <div className="publications-profile ">
                             <img src="/images/White_Tee.png" alt="User Avatar" className="publications-avatar" />
