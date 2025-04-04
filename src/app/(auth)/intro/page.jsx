@@ -23,14 +23,17 @@ const Slider = () => {
     return (
         <div className="flex flex-col w-full min-h-screen bg-black">
             <div className="relative overflow-hidden">
+                <button className="absolute top-5 right-5 z-10" onClick={() => router.push("/login")}>
+                    <img src="/images/close_icon.svg" alt="close" className="w-8 h-8" />
+                </button>
                 <div className="flex transition-transform duration-500" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
                     {slides.map((slide, index) => (
                         <div key={index} className="min-w-full flex flex-col">
                             <div className="h-[300pt]">
                                 <img src={slide.image} alt="" className="w-full h-full object-cover" />
-                                <button className="close-button" onClick={() => router.push("/login")}>
+                                {/* <button className="close-button" onClick={() => router.push("/login")}>
                                     <img src="/images/close_icon.svg" alt="close" />
-                                </button>
+                                </button> */}
                             </div>
                             <div className="bg-black text-white p-6 w-full text-center">
                                 <h4 className="intro-title">{slide.title}</h4>

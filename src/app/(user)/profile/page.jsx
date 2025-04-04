@@ -17,7 +17,7 @@ export default function ProfilePage() {
                 <button onClick={() => router.push("/notification")}><img src="/images/notification_icon.svg" alt="Notification" /> </button>
             </div>
 
-            {/* Grid Items */}
+            {/* Profile Details */}
             <div className="p-4 flex flex-col gap-4 items-center justify-center">
                 <div className="profile-container">
                     <img src="/images/profile.jpg" alt="profile" className="object-cover" />
