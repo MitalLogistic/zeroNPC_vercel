@@ -209,19 +209,19 @@ p{
 
 /* notification page */
 .notification-container{
-  @apply flex justify-between items-center p-3 border-b border-gray-300
+  @apply flex justify-between items-start p-3 border-b border-gray-300
 }
 .notification-time-text{
-  @apply text-primary-gray text-[12pt] font-normal;
+  @apply text-primary-gray text-sm font-normal min-w-[85px] w-auto;
 }
 .notification-message-text{
-  @apply text-primary-black text-[14pt] font-normal line-clamp-2;
+  @apply text-primary-black text-base font-normal line-clamp-2;
 }
 .notification-images{
   @apply w-8 h-8
 }
 .notification-div{
-  @apply flex items-center gap-4;
+  @apply flex items-start gap-2;
 }
 
 /* publications */
