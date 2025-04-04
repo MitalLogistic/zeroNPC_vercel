@@ -12,7 +12,11 @@ const Slider = () => {
     ];
 
     const nextSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
+        if (currentIndex === slides.length - 1) {
+            router.push("/login");
+        } else {
+            setCurrentIndex((prevIndex) => prevIndex + 1);
+        }
     };
 
     const setSlide = (index) => {
