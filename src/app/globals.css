@@ -206,7 +206,6 @@ p{
   @apply font-bold;
 }
 
-
 /* notification page */
 .notification-container{
   @apply flex justify-between items-start p-3 border-b border-gray-300
@@ -226,7 +225,7 @@ p{
 
 /* publications */
 .publications-container{
- @apply bg-light-gray bg-opacity-40 rounded-lg my-4;
+ @apply bg-light-gray bg-opacity-40 rounded-lg my-4 p-2;
 }
 .publications-profile {
   @apply flex items-center space-x-2;
