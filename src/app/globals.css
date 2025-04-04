@@ -212,7 +212,7 @@ p{
   @apply flex justify-between items-start p-3 border-b border-gray-300
 }
 .notification-time-text{
-  @apply text-primary-gray text-sm font-normal min-w-[85px] w-auto;
+  @apply text-primary-gray text-xs text-end font-normal min-w-[75px] w-auto;
 }
 .notification-message-text{
   @apply text-primary-black text-base font-normal line-clamp-2;
