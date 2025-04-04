@@ -5,7 +5,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import UserProfile from "./UserProfile";
 
-export default function FriendProfileList({ setIsFriendSendModel }) {
+export default function FriendProfileList({ setIsOpenFriendModel }) {
     const router = useRouter();
     const [isUserProfileOpen, setIsUserProfileOpen] = useState(false);
 
@@ -21,12 +21,7 @@ export default function FriendProfileList({ setIsFriendSendModel }) {
         { id: 9, img: "/images/profile.jpg", status: false, count: 0 },
         { id: 10, img: "/images/profile.jpg", status: false, count: 0 },
         { id: 11, img: "/images/profile.jpg", status: true, count: 9 },
-        // { id: 12, img: "/images/profile.jpg", status: true, count: 10 },
-        // { id: 13, img: "/images/profile.jpg", status: false, count: 2 },
-        // { id: 14, img: "/images/profile.jpg", status: true, count: 0 },
-        // { id: 15, img: "/images/profile.jpg", status: false, count: 4 },
-        // { id: 16, img: "/images/profile.jpg", status: false, count: 0 },
-        // { id: 17, img: "/images/profile.jpg", status: false, count: 1 },
+
     ];
 
     return (
@@ -73,7 +68,7 @@ export default function FriendProfileList({ setIsFriendSendModel }) {
                         </div>
                     ))}
                 </div>
-                {isUserProfileOpen && (<UserProfile setIsUserProfileOpen={setIsUserProfileOpen} />)}
+                {isUserProfileOpen && (<UserProfile setIsUserProfileOpen={setIsUserProfileOpen} setIsOpenFriendModel={setIsOpenFriendModel} />)}
             </motion.div>
         </div >
     );

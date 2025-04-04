@@ -3,12 +3,11 @@ import Image from "next/image";
 import SendTokenCard from "./SendTokenCard";
 import { useState } from "react";
 
-export default function UserProfile({ setIsUserProfileOpen }) {
-
+export default function UserProfile({ setIsUserProfileOpen, setIsOpenFriendModel }) {
 
     const handleOpenSendModal = () => {
-        setIsOpenSendModel(true);
-
+        setIsUserProfileOpen(false);
+        setIsOpenFriendModel(false);
     };
     return (
         <div
@@ -43,7 +42,7 @@ export default function UserProfile({ setIsUserProfileOpen }) {
                         </div>
                     </div>
                 </div>
-                <button className="main-button">Elige este amigo</button>
+                <button onClick={handleOpenSendModal} className="main-button">Elige este amigo</button>
                 <button onClick={() => setIsUserProfileOpen(false)} className="text-magenta font-semibold text-xl leading-6 mt-6">Volver</button>
             </div>
         </div>

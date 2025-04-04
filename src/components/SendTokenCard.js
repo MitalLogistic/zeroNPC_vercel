@@ -40,7 +40,7 @@ export default function SendTokenCard({ setIsOpenSendModel }) {
                         <div className="flex items-center">
                             <span className="flex items-center bg-gray-200 rounded-full p-2">
                                 <svg viewBox="0.8713692946058091 9.048 11.792531120331951 12.006" xmlns="http://www.w3.org/2000/svg" width="15" height="15">
-                                    <text font-weight="500" font-family="Montserrat-Medium, Montserrat" font-size="24" transform="translate(0 23)" data-name="+" id="_"><tspan y="0" x="0">+</tspan></text>
+                                    <text font-weight="500" fontFamily="Montserrat-Medium, Montserrat" fontSize="24" transform="translate(0 23)" data-name="+" id="_"><tspan y="0" x="0">+</tspan></text>
                                 </svg>
                             </span>
                             <p className="ml-3 text-black">Elige un amigo</p>
