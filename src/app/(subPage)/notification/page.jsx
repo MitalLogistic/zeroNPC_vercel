@@ -10,7 +10,7 @@ const Notification = () => {
         { id: 3, user: "Carlos Mendoza", message: "Has rechazado un token de [User]", time: "Lunes, 17:51", icon: "/images/rejected_icon.svg" },
         { id: 4, user: "Ana Rodríguez", message: "Has aceptado un token de [User]", time: "Lunes, 17:51", icon: "/images/accepted_icon.svg" },
         { id: 5, user: "Luis Gómez", message: "Has recibido un mensaje de [usuario]", time: "Lunes, 17:50", icon: "/images/accepted_icon.svg" },
-        { id: 6, user: "Elena Ruiz", message: "[User] quiere enviarte un token", time: "Lunes, 17:45", icon: "/images/send_token.svg" },
+        { id: 6, user: "Elena Ruiz", message: "[User] quiere enviarte un efhef ehfkeufdj fuheriu token", time: "Lunes, 17:45", icon: "/images/send_token.svg" },
         { id: 7, user: "Pedro Silva", message: "[User] ha rechazado un token tuyo", time: "Lunes, 17:51", icon: "/images/rejected_icon.svg" },
     ];
 

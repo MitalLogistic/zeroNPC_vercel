@@ -8,6 +8,7 @@ import FriendProfileList from "./FriendList";
 export default function SendTokenCard({ setIsOpenSendModel }) {
     const router = useRouter();
     const [isOpenFriendModel, setIsOpenFriendModel] = useState(false);
+    const [isOpenConfirmModel, setIsOpenConfirmModel] = useState(false);
     return (
         <div className="fixed inset-0 flex items-center justify-center z-50">
             {/* <div className="bg-white w-full max-w-[393pt] flex flex-col min-h-screen"> */}
@@ -62,9 +63,35 @@ export default function SendTokenCard({ setIsOpenSendModel }) {
                 </div>
 
                 <div className="mb-10 px-4">
-                    <button className="main-button">Enviar</button>
+                    <button className="main-button" onClick={() => setIsOpenConfirmModel(true)}>Enviar</button>
                 </div>
             </motion.div>
+
+            {isOpenConfirmModel && (
+                <div
+                    id="popup-modal"
+                    tabIndex={-1}
+                    className=" fixed flex inset-0 z-50 justify-center items-center bg-black bg-opacity-50"
+                >
+                    <div className="relative bg-white px-4 flex flex-col justify-center items-center py-7 shadow-lg w-full max-w-[332pt] mx-5">
+
+                        <h1 className="text-3xl font-bold mb-5">¡Estás imparable!</h1>
+                        <p className="text-lg leading-6 text-primary-gray font-normal mb-8">Has ganado las siguientes recompensas</p>
+
+                        <div className="flex justify-center gap-6 mb-9">
+                            <div className="flex flex-col items-center max-w-16">
+                                <img src="/images/bronce.svg" alt="bronce" className="w-12 h-12" />
+                                <p className="text-xs text-black mt-1">Insignia de bronce</p>
+                            </div>
+                            <div className="flex flex-col items-center max-w-16">
+                                <img src="/images/Receive_token.svg" alt="token" className="w-10 h-10" />
+                            </div>
+                        </div>
+                        <button className="main-button" onClick={() => router.push("/createPost")}>¿Hacer una publicación?</button>
+                        <button onClick={() => setIsOpenConfirmModel(false)} className="text-magenta font-semibold text-xl leading-6 mt-6">Ahora no</button>
+                    </div>
+                </div>
+            )}
         </div >
     );
 }

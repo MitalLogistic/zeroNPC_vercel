@@ -186,7 +186,7 @@ p{
   @apply sticky top-0 bg-white w-full z-10 p-4 flex items-center justify-between;
 }
 .app-title {
-  @apply mx-auto text-3xl text-black font-bold;
+  @apply mx-auto text-2xl text-black font-bold;
 }
 .app-logo{
   @apply mx-auto w-[82pt] h-[27pt];
@@ -205,6 +205,7 @@ p{
 .item-type {
   @apply font-bold;
 }
+
 
 /* notification page */
 .notification-container{
@@ -225,7 +226,7 @@ p{
 
 /* publications */
 .publications-container{
- @apply bg-light-gray bg-opacity-40 rounded-lg my-4 p-2;
+ @apply bg-light-gray bg-opacity-40 rounded-lg my-4 cursor-pointer;
 }
 .publications-profile {
   @apply flex items-center space-x-2;
@@ -243,19 +244,25 @@ p{
   @apply text-[10pt] font-medium italic my-0 text-primary-black;
 }
 .publications-description {
-  @apply text-[12pt] font-medium text-primary-black mt-2 p-3;
+  @apply text-sm font-medium text-primary-black p-3;
 }
 .publications-actions {
-  @apply flex w-full bg-light-gray justify-center space-x-5 rounded-2xl mt-5 h-[40pt];
+  @apply flex w-full bg-light-gray justify-center space-x-5 rounded-2xl h-[40pt];
 }
 .publications-action-button {
   @apply flex items-center space-x-2;
 }
 .publications-action-button img {
-  @apply w-6 h-6;
+  @apply w-5 h-5;
 }
 .publications-action-button span {
   @apply font-medium text-sm;
+}
+.publications-button{
+  @apply grid grid-cols-2 border-t mt-3 p-3 text-sm border-[#C0BDC8]
+}
+.publications-button  button{
+  @apply flex justify-center space-x-2 items-center text-sm;
 }
 
 /* Profile page  */

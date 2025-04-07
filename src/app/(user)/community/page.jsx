@@ -5,13 +5,12 @@ import { useRouter } from "next/navigation";
 
 export default function communityPage() {
     const router = useRouter();
-    const [activeTab, setActiveTab] = useState("general");
+    const [isDetailsOpen, setIsDetailsOpen] = useState(false);
     return (
-        <div className="">
-            {/* Header */}
+        <div>
             <div className="sticky top-0 bg-white w-full z-10 shadow-[0px_4px_8px_#00000029] pb-6">
                 <div className="p-4 flex items-center justify-between">
-                    <button>
+                    <button onClick={() => router.push("/explorePeople")}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="32.237" height="23.445" viewBox="0 0 32.237 23.445">
                             <path id="People_Icon" d="M40-776.555v-4.1a4.293,4.293,0,0,1,.641-2.29,4.273,4.273,0,0,1,1.7-1.593,21.751,21.751,0,0,1,4.616-1.7,20.16,20.16,0,0,1,4.762-.568,20.16,20.16,0,0,1,4.762.568,21.751,21.751,0,0,1,4.616,1.7,4.273,4.273,0,0,1,1.7,1.593,4.293,4.293,0,0,1,.641,2.29v4.1Zm26.375,0v-4.4a5.9,5.9,0,0,0-.9-3.1,7.917,7.917,0,0,0-2.546-2.546,18.488,18.488,0,0,1,3.517.751,18.333,18.333,0,0,1,3.077,1.3,6.49,6.49,0,0,1,2.015,1.63,3.129,3.129,0,0,1,.7,1.96v4.4ZM51.722-788.278A5.644,5.644,0,0,1,47.583-790a5.644,5.644,0,0,1-1.722-4.139,5.644,5.644,0,0,1,1.722-4.14A5.644,5.644,0,0,1,51.722-800a5.644,5.644,0,0,1,4.139,1.722,5.644,5.644,0,0,1,1.722,4.14A5.644,5.644,0,0,1,55.862-790,5.644,5.644,0,0,1,51.722-788.278Zm14.653-5.861A5.644,5.644,0,0,1,64.654-790a5.644,5.644,0,0,1-4.139,1.722,7.312,7.312,0,0,1-1.026-.092,8.957,8.957,0,0,1-1.026-.2,8.714,8.714,0,0,0,1.52-2.6,8.447,8.447,0,0,0,.531-2.967,8.447,8.447,0,0,0-.531-2.967,8.714,8.714,0,0,0-1.52-2.6,4.455,4.455,0,0,1,1.026-.238A9.624,9.624,0,0,1,60.514-800a5.644,5.644,0,0,1,4.139,1.722A5.644,5.644,0,0,1,66.375-794.139Z" transform="translate(-40 800)" />
                         </svg>
@@ -35,20 +34,8 @@ export default function communityPage() {
                     />
                 </div>
             </div>
-
-            {/* <div className="sticky top-12 z-10 mt-4 ">
-                <input
-                    type="text"
-                    placeholder="¿Sobre qué quieres publicar?"
-                    className="w-full px-4 py-3 rounded-full border border-gray-300 bg-gray-100 shadow-md focus:outline-none"
-                />
-            </div> */}
-
-
-
-
             <div className="pb-28 mt-10 px-4">
-                <div className="publications-container">
+                <div className="publications-container" onClick={() => router.push("/postDetails")}>
                     <div className="flex justify-between p-3">
                         <div className="publications-profile ">
                             <img src="/images/profile.jpg" alt="User Avatar" className="publications-avatar" />
@@ -73,11 +60,11 @@ export default function communityPage() {
                             </button>
                         </div>
                     </div>
-                    <div className="grid grid-cols-2 border-t mt-3 p-3  border-[#C0BDC8]">
-                        <button className="flex justify-center space-x-2 items-center">
+                    <div className="publications-button">
+                        <button>
                             <img src="/images/unlike_icon.svg" alt="like_icon" className="w-6 h-6" /> <span>Me Gusta</span>
                         </button>
-                        <button className="flex justify-center space-x-2 items-center">
+                        <button>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 17.699 17.699"><g id="Comment_Icon" transform="translate(-78 -615)"><path id="maps_ugc_24dp_5F6368_FILL1_wght400_GRAD0_opsz24" d="M40-862.3l1.643-5.647a8.626,8.626,0,0,1-.6-1.77,8.568,8.568,0,0,1-.2-1.854,8.207,8.207,0,0,1,.664-3.287,8.511,8.511,0,0,1,1.8-2.676,8.511,8.511,0,0,1,2.676-1.8A8.209,8.209,0,0,1,49.271-880a8.209,8.209,0,0,1,3.287.664,8.512,8.512,0,0,1,2.676,1.8,8.511,8.511,0,0,1,1.8,2.676,8.207,8.207,0,0,1,.664,3.287,8.207,8.207,0,0,1-.664,3.287,8.512,8.512,0,0,1-1.8,2.676,8.512,8.512,0,0,1-2.676,1.8,8.209,8.209,0,0,1-3.287.664,8.571,8.571,0,0,1-1.854-.2,8.627,8.627,0,0,1-1.77-.6Z" transform="translate(38 1495)" fill="#C0BDC8" /><g id="Group_28" data-name="Group 28"><circle id="Ellipse_15" data-name="Ellipse 15" cx="1.5" cy="1.5" r="1.5" transform="translate(82 622)" fill="#fff" /><circle id="Ellipse_16" data-name="Ellipse 16" cx="1.5" cy="1.5" r="1.5" transform="translate(86 622)" fill="#fff" /><circle id="Ellipse_17" data-name="Ellipse 17" cx="1.5" cy="1.5" r="1.5" transform="translate(90 622)" fill="#fff" /></g></g></svg><span>Comentar</span>
                         </button>
                     </div>
