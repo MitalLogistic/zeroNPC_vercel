@@ -17,9 +17,9 @@ export default function communityPage() {
                     </button>
                     <h1 className="app-title">Comunidad</h1>
                     <div className="flex items-center gap-3">
-                        <button onClick={() => router.push("/notification")}>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="56.29 91.06 399.43 398.94"><path fill="#000" d="M71.3456 91.0552C65.5504 91.0552 60.2694 94.3807 57.7653 99.6069C55.2611 104.833 55.9781 111.033 59.6091 115.549L200.493 290.795V450.827C200.493 470 213.977 490 230.611 490H276.7C293.333 490 306.818 470 306.818 450.827V294.365L452.333 115.621C456.002 111.114 456.75 104.898 454.255 99.6487C451.76 94.3997 446.467 91.0552 440.655 91.0552H71.3456Z"></path></svg> </button>
-                        <button onClick={() => router.push("/notification")}>
+                        {/* <button onClick={() => router.push("/notification")}>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="56.29 91.06 399.43 398.94"><path fill="#000" d="M71.3456 91.0552C65.5504 91.0552 60.2694 94.3807 57.7653 99.6069C55.2611 104.833 55.9781 111.033 59.6091 115.549L200.493 290.795V450.827C200.493 470 213.977 490 230.611 490H276.7C293.333 490 306.818 470 306.818 450.827V294.365L452.333 115.621C456.002 111.114 456.75 104.898 454.255 99.6487C451.76 94.3997 446.467 91.0552 440.655 91.0552H71.3456Z"></path></svg> </button> */}
+                        <button>
                             <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 20 20">
                                 <path id="Search_Icon" d="M138.444-820l-7-7a6.623,6.623,0,0,1-1.917,1.056,6.773,6.773,0,0,1-2.306.389,6.972,6.972,0,0,1-5.125-2.1,6.972,6.972,0,0,1-2.1-5.125,6.972,6.972,0,0,1,2.1-5.125,6.972,6.972,0,0,1,5.125-2.1,6.971,6.971,0,0,1,5.125,2.1,6.972,6.972,0,0,1,2.1,5.125,6.772,6.772,0,0,1-.389,2.305A6.62,6.62,0,0,1,133-828.556l7,7Zm-11.222-7.778a4.822,4.822,0,0,0,3.542-1.458,4.822,4.822,0,0,0,1.458-3.542,4.822,4.822,0,0,0-1.458-3.542,4.822,4.822,0,0,0-3.542-1.458,4.822,4.822,0,0,0-3.542,1.458,4.822,4.822,0,0,0-1.458,3.542,4.822,4.822,0,0,0,1.458,3.542A4.822,4.822,0,0,0,127.222-827.778Z" transform="translate(-120 840)" />
                             </svg>
@@ -94,11 +94,11 @@ export default function communityPage() {
                             </button>
                         </div>
                     </div>
-                    <div className="grid grid-cols-2 border-t mt-3 p-3  border-[#C0BDC8]">
-                        <button className="flex justify-center space-x-2 items-center">
+                    <div className="publications-button">
+                        <button >
                             <img src="/images/unlike_icon.svg" alt="like_icon" className="w-6 h-6" /> <span>Me Gusta</span>
                         </button>
-                        <button className="flex justify-center space-x-2 items-center">
+                        <button >
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 17.699 17.699"><g id="Comment_Icon" transform="translate(-78 -615)"><path id="maps_ugc_24dp_5F6368_FILL1_wght400_GRAD0_opsz24" d="M40-862.3l1.643-5.647a8.626,8.626,0,0,1-.6-1.77,8.568,8.568,0,0,1-.2-1.854,8.207,8.207,0,0,1,.664-3.287,8.511,8.511,0,0,1,1.8-2.676,8.511,8.511,0,0,1,2.676-1.8A8.209,8.209,0,0,1,49.271-880a8.209,8.209,0,0,1,3.287.664,8.512,8.512,0,0,1,2.676,1.8,8.511,8.511,0,0,1,1.8,2.676,8.207,8.207,0,0,1,.664,3.287,8.207,8.207,0,0,1-.664,3.287,8.512,8.512,0,0,1-1.8,2.676,8.512,8.512,0,0,1-2.676,1.8,8.209,8.209,0,0,1-3.287.664,8.571,8.571,0,0,1-1.854-.2,8.627,8.627,0,0,1-1.77-.6Z" transform="translate(38 1495)" fill="#C0BDC8" /><g id="Group_28" data-name="Group 28"><circle id="Ellipse_15" data-name="Ellipse 15" cx="1.5" cy="1.5" r="1.5" transform="translate(82 622)" fill="#fff" /><circle id="Ellipse_16" data-name="Ellipse 16" cx="1.5" cy="1.5" r="1.5" transform="translate(86 622)" fill="#fff" /><circle id="Ellipse_17" data-name="Ellipse 17" cx="1.5" cy="1.5" r="1.5" transform="translate(90 622)" fill="#fff" /></g></g></svg><span>Comentar</span>
                         </button>
                     </div>

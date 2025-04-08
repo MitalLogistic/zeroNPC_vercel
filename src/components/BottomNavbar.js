@@ -40,7 +40,7 @@ const BottomNavbar = () => {
                     </svg>
                     <span className="bottombar-menu-name">Tokens</span>
                 </Link>
-                <Link href="#" className={`bottombar-icon ${pathname === "/store" ? "text-black" : "text-[#78757E]"}`}>
+                <Link href="/store" className={`bottombar-icon ${pathname === "/store" ? "text-black" : "text-[#78757E]"}`}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 26.667" className={pathname === "/store" ? "opacity-100" : "opacity-70"}>
                         <path id="Store_Icon" d="M121.667-796.667V-800h26.667v3.333Zm0,23.333v-10H120v-3.333L121.667-795h26.667L150-786.667v3.333h-1.667v10H145v-10h-6.667v10ZM125-776.667h10v-6.667H125Z" transform="translate(-120 800)" fill="currentColor" opacity="0.7" />
                     </svg>

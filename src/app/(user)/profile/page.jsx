@@ -116,7 +116,7 @@ export default function ProfilePage() {
             )}
             {activeTab === "publicaciones" && (
                 <div className="token-status-container">
-                    <div className="publications-container">
+                    <div className="publications-container p-3">
                         <div className="publications-profile ">
                             <img src="/images/White_Tee.png" alt="User Avatar" className="publications-avatar" />
                             <div>
