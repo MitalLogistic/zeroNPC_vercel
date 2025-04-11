@@ -45,24 +45,24 @@ export default function FriendProfileList({ setIsOpenFriendModel }) {
                 </div>
 
                 {/* User Grid */}
-                <div className="px-4 w-full my-5 mx-auto grid grid-cols-3 xs:grid-cols-4 sm:grid-cols-4 gap-3">
+                <div className="friends-grid">
                     {users.map((user) => (
                         <div key={user.id} className="relative text-center" onClick={() => setIsUserProfileOpen(true)}>
                             {/* Profile Image */}
-                            <div className="aspect-square rounded-full overflow-hidden">
+                            <div className="friend-avatar-wrapper">
                                 <img
                                     src={user.img}
                                     alt="User"
-                                    className="w-full h-full rounded-full object-cover border border-white"
+                                    className="friend-avatar-img"
                                 />
                             </div>
 
                             {/* Online Status Indicator */}
                             {user.status && (
-                                <span className="absolute top-2 right-2 w-4 h-4 bg-cyan border-2 rounded-full border-white"></span>
+                                <span className="friend-online-indicator"></span>
                             )}
 
-                            <span className=" bottom-0 left-1/2 transform -translate-x-1/2 bg-black text-white text-xs rounded-full px-3 py-1">
+                            <span className="friend-token-count">
                                 {user.count}
                             </span>
                         </div>

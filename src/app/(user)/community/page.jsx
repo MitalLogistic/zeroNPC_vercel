@@ -37,7 +37,7 @@ export default function communityPage() {
             <div className="pb-28 mt-10 px-4">
                 <div className="publications-container" onClick={() => router.push("/postDetails")}>
                     <div className="flex justify-between p-3">
-                        <div className="publications-profile ">
+                        <div className="inline-center-gap">
                             <img src="/images/profile.jpg" alt="User Avatar" className="publications-avatar" />
                             <div>
                                 <p className="publications-info">iamsarah <span className="publications-time">2 days ago</span></p>
@@ -71,7 +71,7 @@ export default function communityPage() {
                 </div>
                 <div className="publications-container">
                     <div className="flex justify-between p-3">
-                        <div className="publications-profile ">
+                        <div className="inline-center-gap">
                             <img src="/images/profile.jpg" alt="User Avatar" className="publications-avatar" />
                             <div>
                                 <p className="publications-info">User <span className="publications-time">2 days ago</span></p>

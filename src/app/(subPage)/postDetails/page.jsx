@@ -8,9 +8,9 @@ export default function CommunityProfileDetails({ }) {
     const [isUserProfileOpen, setIsUserProfileOpen] = useState(false);
     return (
         <div>
-            <div className="sticky top-0 bg-white w-full z-10 shadow-[0px_4px_8px_#00000029] p-4">
-                <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-2">
+            <div className="app-header1">
+                <div className="app-header-inner1">
+                    <div className="inline-center-gap">
                         <img src="/images/profile.jpg" alt="avatar" className="w-10 h-10 rounded-full object-cover" />
                         <div>
                             <p className="font-semibold text-gray-800">iamsarah</p>

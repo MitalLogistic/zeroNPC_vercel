@@ -17,7 +17,7 @@ const StorePage = () => {
         <div>
             <div className="sticky top-0 bg-white w-full z-10 ">
                 <div className="p-4 flex items-center justify-between">
-                    <button >
+                    <button>
                         <svg xmlns="http://www.w3.org/2000/svg" width="22.223" height="23.392" viewBox="0 0 22.223 23.392">
                             <path id="Categories_Icon" d="M124.094-869.474,130.527-880l6.433,10.526Zm12.866,12.866a5.076,5.076,0,0,1-3.728-1.535,5.076,5.076,0,0,1-1.535-3.728,5.076,5.076,0,0,1,1.535-3.728,5.076,5.076,0,0,1,3.728-1.535,5.076,5.076,0,0,1,3.728,1.535,5.076,5.076,0,0,1,1.535,3.728,5.076,5.076,0,0,1-1.535,3.728A5.076,5.076,0,0,1,136.959-856.608ZM120-857.193v-9.357h9.357v9.357Z" transform="translate(-120 880)" />
                         </svg>
@@ -37,7 +37,7 @@ const StorePage = () => {
                 </div>
             </div>
 
-            <div className="bg-gray-100 rounded-2xl p-6 my-6">
+            <div className="bg-gray-100 rounded-2xl my-6">
                 <Swiper
                     pagination={{ clickable: true }}
                     autoplay={{ delay: 2000, disableOnInteraction: false }} // proper autoplay config

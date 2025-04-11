@@ -18,8 +18,8 @@ export default function ExplorePeople() {
     ];
     return (
         <div>
-            <div className="sticky top-0 bg-white w-full z-10 shadow-[0px_4px_8px_#00000029] pb-6">
-                <div className="p-4 flex items-center justify-between">
+            <div className="app-header1 pb-6">
+                <div className="app-header-inner1">
                     <button onClick={() => router.back()}>
                         <img src="/images/Back_Arrow_Icon.svg" alt="Back" />
                     </button>
@@ -31,20 +31,20 @@ export default function ExplorePeople() {
                     <input
                         type="text"
                         placeholder="Buscar a algien"
-                        className="absolute left-1/2 z-30 -translate-x-1/2  w-11/12 px-4 py-3 rounded-full border border-gray-300 bg-white shadow-md focus:outline-none"
+                        className="search-input"
                     />
                 </div>
             </div>
-            <div className="my-10 px-4 w-full mx-auto grid grid-cols-3 xs:grid-cols-4 sm:grid-cols-4 gap-3">
+            <div className="friends-grid">
                 {friends.map((friend) => (
-                    <div key={friend.id} className="aspect-square relative">
+                    <div key={friend.id} className="friend-avatar-wrapper">
                         <img
                             src={friend.img}
                             alt="Friend"
-                            className="w-full h-full rounded-full object-cover border border-white"
+                            className="friend-avatar-img "
                         />
                         {friend.online && (
-                            <span className="absolute top-2 right-2 w-4 h-4 bg-cyan border-2 rounded-full border-white"></span>
+                            <span className="friend-online-indicator"></span>
                         )}
                     </div>
                 ))}
