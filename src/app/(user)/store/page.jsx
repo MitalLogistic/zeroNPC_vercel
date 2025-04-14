@@ -14,7 +14,7 @@ const StorePage = () => {
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrGzBMFq3g0Gvf_3aE8-cCiadZqpyqriMTsQ&s',
     ];
     return (
-        <div>
+        <>
             <div className="sticky top-0 bg-white w-full z-10 ">
                 <div className="p-4 flex items-center justify-between">
                     <button>
@@ -110,8 +110,7 @@ const StorePage = () => {
                 </div>
                 <p className="text-lg font-semibold mt-2">Sudaderas</p>
             </div>
-            <BottomNavbar />
-        </div>
+        </>
     );
 };
 

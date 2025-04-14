@@ -7,7 +7,7 @@ const BottomNavbar = () => {
     const isActive = (paths) => paths.some(path => pathname.includes(path));
     return (
         <div className="bottombar">
-            <div className="bottombar-container" style={{ boxShadow: "0pt -3pt 6pt #00000029" }}>
+            <div className="bottombar-container">
                 <Link
                     href="/profile"
                     className={`bottombar-icon ${isActive(["/profile", "/friends", "/wardrobe"]) ? "text-black" : "text-[#78757E]"}`}

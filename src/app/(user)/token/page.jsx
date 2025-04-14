@@ -48,7 +48,7 @@ const TokenPage = () => {
                     </div>
                     <div className="mt-1 space-y-2">
                         {[1, 2, 3, 4].map((_, i) => (
-                            <div key={i} className="flex items-center bg-gray-100 p-2 rounded-lg cursor-pointer" onClick={() => setIsOpen(true)}>
+                            <div key={i} className="flex items-center bg-gray-100 p-2 rounded-lg cursor-pointer" onClick={() => router.push('/tokenDetails')}>
                                 <img src="/images/White_Tee@3x.png" alt="Items" className="w-12 h-12 rounded-lg" />
                                 <div className="flex ml-4 space-x-2 text-magenta">
                                     {[1, 2, 3, 4].map((_, j) => (
@@ -59,11 +59,7 @@ const TokenPage = () => {
                             </div>
                         ))}
                     </div>
-                    {isOpen && (
-                        <TokenDetailsCard setIsOpen={setIsOpen} />
-                    )}
                 </div>
-                {!isOpen && (<BottomNavbar />)}
             </div>
         </div>
     );

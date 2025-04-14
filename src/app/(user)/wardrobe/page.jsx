@@ -7,7 +7,6 @@ import { useState } from "react";
 
 export default function Wardrobe() {
     const router = useRouter();
-    const [isOpen, setIsOpen] = useState(false);
     const items = [
         { name: "Camiseta", type: "Ghost", image: "/images/White_Tee@3x.png" },
         { name: "Camiseta", type: "Demonio", image: "/images/White_Tee@3x.png" },
@@ -35,16 +34,13 @@ export default function Wardrobe() {
             {/* Grid Items */}
             <div className="wardrobe-items">
                 {items.map((item, index) => (
-                    <div key={index} onClick={() => setIsOpen(true)} >
+                    <div key={index} onClick={() => router.push('/tokenDetails')} >
                         <Image src={item.image} width={150} height={150} alt={item.type} className="wardrobe-item-card" />
                         <p className="wardabe-item-name">{item.name}</p>
                         <span className="font-bold">{item.type}</span>
                     </div>
                 ))}
             </div>
-            {isOpen && (
-                <TokenDetailsCard setIsOpen={setIsOpen} />
-            )}
             <div id="popup-modal" tabIndex={-1} className="popup-modal">
                 <div className="popup-content">
                     <h1 className="popup-title">¡Vas a tope!</h1>
@@ -63,8 +59,6 @@ export default function Wardrobe() {
                     <button className="go-to-wardrobe">Ir a mi armario</button>
                 </div>
             </div>
-            {!isOpen && (<BottomNavbar />)}
-
         </div>
     );
 }

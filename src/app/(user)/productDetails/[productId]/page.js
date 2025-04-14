@@ -6,7 +6,7 @@ import BottomNavbar from "@/components/BottomNavbar";
 export default function ProductDetails() {
     const router = useRouter();
     return (
-        <div>
+        <>
             <div className="sticky top-0 bg-white w-full z-10">
                 <div className="p-4 flex items-center justify-between">
                     <button onClick={() => router.back()}>
@@ -81,7 +81,6 @@ export default function ProductDetails() {
                     Añadir al carrito
                 </button>
             </div>
-            <BottomNavbar />
-        </div>
+        </>
     );
 }

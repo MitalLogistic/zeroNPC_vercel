@@ -46,9 +46,7 @@ const FriendPage = () => {
                         </div>
                     ))}
                 </div>
-
             </div>
-            <BottomNavbar />
         </>
     );
 };

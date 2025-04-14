@@ -7,7 +7,7 @@ export default function ProfilePage() {
     const router = useRouter();
     const [activeTab, setActiveTab] = useState("general");
     return (
-        <div className="">
+        <>
             {/* Header */}
             <div className="app-header">
                 <button>
@@ -137,7 +137,6 @@ export default function ProfilePage() {
                     </div>
                 </div>
             )}
-            <BottomNavbar />
-        </div>
+        </>
     );
 }

@@ -7,7 +7,7 @@ export default function communityPage() {
     const router = useRouter();
     const [isDetailsOpen, setIsDetailsOpen] = useState(false);
     return (
-        <div>
+        <>
             <div className="sticky top-0 bg-white w-full z-10 shadow-[0px_4px_8px_#00000029] pb-6">
                 <div className="p-4 flex items-center justify-between">
                     <button onClick={() => router.push("/explorePeople")}>
@@ -104,7 +104,6 @@ export default function communityPage() {
                     </div>
                 </div>
             </div>
-            <BottomNavbar />
-        </div >
+        </>
     );
 }
