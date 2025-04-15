@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+  ::-webkit-scrollbar-track {
+    @apply rounded-full bg-gray-100;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-gray-300;
+  }
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   font-family: var(--font-montserrat);
@@ -572,3 +584,115 @@ p{
 .friend-token-count{
   @apply bottom-0 left-1/2 transform -translate-x-1/2 bg-black text-white text-xs rounded-full px-3 py-1;
 }
+
+/* Chat Page */
+.chat-container {
+  @apply px-4 pb-28 divide-y divide-gray-200 ;
+}
+.chat-item {
+  @apply py-3  flex items-center space-x-2 rtl:space-x-reverse;
+}
+.friend-avatar-wrapper {
+  @apply shrink-0  w-11 h-11;
+}
+.friend-avatar-img {
+  @apply w-full h-full rounded-full;
+}
+.chat-info{
+  @apply flex-1 min-w-0;
+}
+.chat-username {
+  @apply text-sm font-bold text-primary-black truncate;
+}
+.chat-last-message {
+  @apply text-sm text-primary-black font-normal truncate;
+}
+.chat-time {
+  @apply inline-flex items-center text-xs font-normal text-primary-gray
+}
+.no-chats-message {
+  @apply text-center font-normal text-base text-primary-gray;
+}
+
+/* Message List Page */
+.chat-wrapper {
+  @apply flex flex-col h-screen;
+}
+.chat-header {
+  @apply sticky top-0 bg-white w-full z-10 flex items-center space-x-3 p-4 mb-4 shadow-[0px_4px_8px_#00000029];
+}
+.chat-avatar{
+  @apply w-10 h-10 rounded-full;
+}
+.chat-user-name {
+  @apply font-bold text-black;
+}
+.chat-user-meta {
+  @apply text-sm text-primary-black font-normal;
+}
+.chat-body {
+  @apply flex-grow overflow-y-auto px-4 py-2;
+}
+.chat-date {
+  @apply flex justify-center mb-2;
+}
+.chat-date-label {
+  @apply text-xs bg-light-gray text-black font-normal px-3 py-1 rounded-full;
+}
+.chat-bubble {
+  @apply text-sm px-4 py-2 rounded-2xl max-w-[70%];
+}
+.chat-sender {
+  @apply bg-black text-white rounded-br-none;
+}
+.chat-receiver {
+  @apply bg-light-gray text-black rounded-bl-none;
+}
+.chat-bubble-wrapper-sender {
+  @apply flex justify-end;
+}
+.chat-bubble-wrapper-receiver {
+  @apply flex items-start;
+}
+.chat-time-sender {
+  @apply flex justify-end;
+}
+.chat-time-receiver {
+  @apply flex justify-start;
+}
+.chat-time-text {
+  @apply text-[10px] text-gray-500 pr-2;
+}
+/* Address card */
+.chat-address-wrapper {
+  @apply bg-white space-y-4;
+}
+.chat-address-card {
+  @apply bg-light-gray p-4 mx-4 rounded-lg;
+}
+.chat-address-name {
+  @apply font-bold text-black;
+}
+.chat-address-detail {
+  @apply text-sm text-black font-normal;
+}
+.chat-address-edit {
+  @apply text-magenta text-sm underline cursor-pointer mt-1;
+}
+.chat-address-icon-wrapper {
+  @apply flex justify-end mt-2;
+}
+.chat-close-deal-btn {
+  @apply flex justify-center px-4;
+}
+.chat-input-wrapper {
+  @apply w-full bottom-0 z-10 bg-white flex py-3 px-3 relative;
+  box-shadow: 0pt -1pt 4pt #00000029;
+}
+.chat-input {
+  @apply pl-6 pr-10 placeholder:text-primary-black placeholder:text-opacity-50 placeholder:font-normal border-2 border-[#C0BDC8] rounded-3xl h-12 w-full focus:outline focus:outline-light-blue;
+}
+.chat-send-btn {
+  @apply absolute right-5 top-1/2 transform -translate-y-1/2 cursor-pointer;
+}
+
