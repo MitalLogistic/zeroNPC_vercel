@@ -4,19 +4,22 @@ import BottomNavbar from "@/components/BottomNavbar";
 import TokenDetailsCard from "@/components/TokenDetails";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Drawer from "@/components/Drawer";
 
 const TokenPage = () => {
     const router = useRouter();
     const [isOpen, setIsOpen] = useState(false);
+    const [isDrawerOpen, setIsDrawerOpen] = useState(false);
     return (
         <div>
             <div className="app-header">
-                <button>
+                <button onClick={() => setIsDrawerOpen(true)}>
                     <img src="/images/menu_icon.svg" alt="menu" />
                 </button>
                 <img src="/images/logo_dark.png" alt="logo" className="app-logo" />
                 <button onClick={() => router.push("/notification")}><img src="/images/notification_icon.svg" alt="Notification" /> </button>
             </div>
+            {isDrawerOpen && (<Drawer setIsDrawerOpen={setIsDrawerOpen} />)}
 
             <div className="mt-4 px-4 pb-28">
                 <p className="text-lg font-bold">Mis Cargas (2/3)</p>

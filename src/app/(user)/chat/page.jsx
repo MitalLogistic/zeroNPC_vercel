@@ -1,9 +1,11 @@
 'use client';
 import Image from 'next/image';
 import React from 'react';
+import { useRouter } from "next/navigation";
 
 
 const ChatList = () => {
+    const router = useRouter();
     const chatList = [
         {
             id: 1,
@@ -31,7 +33,7 @@ const ChatList = () => {
             <ul className="chat-container">
                 {chatList && chatList.length > 0 ? (
                     chatList.map((chat, index) => (
-                        <li key={chat.id} className="chat-item ">
+                        <li key={chat.id} className="chat-item" onClick={() => router.push("/chatDetails")}>
                             <div className="friend-avatar-wrapper">
                                 <img class=" friend-avatar-img" src={chat.profileImage || '/default-avatar.png'} alt={chat.username} />
                             </div>

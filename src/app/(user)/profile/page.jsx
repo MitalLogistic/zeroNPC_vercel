@@ -2,20 +2,23 @@
 import BottomNavbar from "@/components/BottomNavbar";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Drawer from "@/components/Drawer";
 
 export default function ProfilePage() {
     const router = useRouter();
     const [activeTab, setActiveTab] = useState("general");
+    const [isDrawerOpen, setIsDrawerOpen] = useState(false);
     return (
         <>
             {/* Header */}
             <div className="app-header">
-                <button>
+                <button onClick={() => setIsDrawerOpen(true)}>
                     <img src="/images/menu_icon.svg" alt="menu" />
                 </button>
                 <img src="/images/logo_dark.png" alt="logo" className="app-logo" />
                 <button onClick={() => router.push("/notification")}><img src="/images/notification_icon.svg" alt="Notification" /> </button>
             </div>
+            {isDrawerOpen && (<Drawer setIsDrawerOpen={setIsDrawerOpen} />)}
 
             {/* Profile Details */}
             <div className="p-4 flex flex-col gap-4 items-center justify-center">
