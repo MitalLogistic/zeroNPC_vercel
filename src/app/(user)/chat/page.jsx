@@ -25,9 +25,12 @@ const ChatList = () => {
     return (
         <div>
             <div className="app-header">
+                <button onClick={() => router.back()}>
+                    <img src="/images/Back_Arrow_Icon.svg" alt="Back" />
+                </button>
                 <h1 className="app-title">Chat</h1>
+                <span className="w-[30px]" />
             </div>
-
             {/* Chat Items */}
 
             <ul className="chat-container">
