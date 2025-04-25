@@ -1,5 +1,6 @@
 import { Inter, Montserrat } from "next/font/google";
 import "./globals.css";
+import { Providers } from "./providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -38,7 +39,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${montserrat.variable} antialiased max-w-[393pt] h-screen max-h-[852pt] m-auto w-full bg-white `} >{children}</body>
+      <body className={`${inter.variable} ${montserrat.variable} antialiased max-w-[393pt] h-screen max-h-[852pt] m-auto w-full bg-white `} >
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }

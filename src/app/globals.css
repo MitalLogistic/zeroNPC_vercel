@@ -34,7 +34,9 @@ p{
 .main-button{
   @apply font-semibold text-xl bg-yellow w-full rounded-3xl h-14;
 }
-
+.error-msg{
+  @apply text-red-600 text-sm font-medium;
+}
 /* splash */
 @keyframes fadeInUp {
   from {
@@ -128,7 +130,7 @@ p{
   @apply relative my-2.5;
 }
 .password-icon-img{
-  @apply absolute right-5 top-1/3;
+  @apply absolute right-5 top-1/3 w-6 h-6;
 }
 .checkbox-container{
   @apply flex items-center gap-3 my-5
@@ -151,7 +153,27 @@ p{
 .login-form-bg{
   @apply min-h-[350px] bg-light-blue bg-opacity-40 rounded-2xl w-full my-5 px-5 py-10
 }
-
+/* forgot-password */
+.forgot-title{
+  @apply my-3 text-center text-black font-bold text-2xl leading-7;
+}
+.otp-input-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  margin: 20px 0px;
+  input {
+    width: 100%;
+    font-size: 16px;     
+    text-align: center;
+    &:first-child{
+      margin-left: 0px;
+    }   
+  }
+}
+.otp-input-wrapper input {
+  @apply w-12 h-12 text-center font-semibold text-primary-black text-xl border-2 border-light-blue rounded-xl focus:outline-none focus:ring-2 focus:ring-light-blue;
+}
 /* upload Profile screen */
 .profile-image-container{
   @apply w-[180pt] h-[180pt] bg-gray-200 rounded-full flex items-center justify-center overflow-hidden
