@@ -3,9 +3,16 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { setLogout } from "../../redux/reducers/slice/authSlice";
+import { useDispatch } from "react-redux";
 
 export default function Drawer({ setIsDrawerOpen }) {
     const router = useRouter();
+    const dispatch = useDispatch();
+    const handleLogout = () => {
+        dispatch(setLogout(null));
+        router.push("/login")
+    }
 
     return (
         <div className="fixed inset-0 flex items-center justify-center z-50">
@@ -36,7 +43,7 @@ export default function Drawer({ setIsDrawerOpen }) {
                     <Link href={"#"}><li>reportar un problema</li></Link>
                     <Link href={"#"}><li>privacidad</li></Link>
                 </ul>
-                <div className="text-magenta text-2xl font-semibold text-center mt-auto mb-10 cursor-pointer">cerrar sesión</div>
+                <div className="text-magenta text-2xl font-semibold text-center mt-auto mb-10 cursor-pointer" onClick={handleLogout}>cerrar sesión</div>
             </motion.div>
         </div >
     );
