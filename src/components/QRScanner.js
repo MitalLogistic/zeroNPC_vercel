@@ -1,41 +1,50 @@
-// components/QRScanner.js
-'use client'; // if you're using Next.js 13+ app directory
+'use client'; // Required for Next.js app directory if using
 
-import { useEffect, useRef } from 'react';
-import { Html5QrcodeScanner } from 'html5-qrcode';
+import React, { useState } from 'react';
 
-const QRScanner = ({ onScanSuccess }) => {
-    const scannerRef = useRef(null);
+const QRScanner = () => {
+    const [nfcData, setNfcData] = useState('');
 
-    useEffect(() => {
-        if (!scannerRef.current) return;
+    const checkNfcAvailability = () => {
+        return 'NDEFReader' in window;
+    };
 
-        const scanner = new Html5QrcodeScanner(
-            'qr-reader',
-            {
-                fps: 10,
-                qrbox: { width: 250, height: 250 },
-            },
-            false
-        );
+    const handleScan = async () => {
+        if (!checkNfcAvailability()) {
+            alert("Your browser does not support NFC scanning. Try Chrome on Android.");
+            return;
+        }
 
-        scanner.render(
-            (decodedText, decodedResult) => {
-                console.log("QR Code scanned: ", decodedText);
-                onScanSuccess(decodedText);
-                scanner.clear(); // Stop scanning after success
-            },
-            (errorMessage) => {
-                // Handle decode errors if needed
-            }
-        );
+        try {
+            const reader = new NDEFReader();
+            await reader.scan();
 
-        return () => {
-            scanner.clear().catch(error => console.error('Scanner cleanup failed.', error));
-        };
-    }, [onScanSuccess]);
+            reader.onreading = (event) => {
+                const { message } = event;
+                const record = message.records[0];
 
-    return <div id="qr-reader" ref={scannerRef} style={{ width: '300px' }} />;
+                if (record) {
+                    const textDecoder = new TextDecoder(record.encoding || 'utf-8');
+                    const decoded = textDecoder.decode(record.data);
+                    setNfcData(decoded);
+                    alert('NFC Tag Scanned: ' + decoded);
+                } else {
+                    alert('No data found on the NFC tag.');
+                }
+            };
+        } catch (error) {
+            console.error("NFC scan failed:", error);
+            alert("Error scanning NFC.");
+        }
+    };
+
+    return (
+        <div>
+            <h1>Scan NFC Tag</h1>
+            <button onClick={handleScan}>Start NFC Scan</button>
+            {nfcData && <p>Scanned NFC Data: {nfcData}</p>}
+        </div>
+    );
 };
 
 export default QRScanner;
