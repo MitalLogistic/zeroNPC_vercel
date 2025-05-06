@@ -1,49 +1,68 @@
-'use client';
+import { useState, useEffect } from 'react';
 
-import { useState } from 'react';
+const NfcScanner = () => {
+    const [nfcData, setNfcData] = useState(null);
+    const [scanning, setScanning] = useState(false);
+    const [error, setError] = useState(null);
 
-export default function NfcScanner() {
-    const [nfcData, setNfcData] = useState('');
-    const [error, setError] = useState('');
-
-    const isNfcSupported = () =>
-        typeof window !== 'undefined' && 'NDEFReader' in window;
-
-    const handleScan = async () => {
-        if (!isNfcSupported()) {
-            setError('❌ NFC is not supported on this browser or device.');
-            return;
+    useEffect(() => {
+        // Check if the browser supports NFC
+        if ('NFCReader' in window) {
+            console.log('NFC API is supported');
+        } else {
+            setError('NFC is not supported on this device/browser.');
         }
+    }, []);
 
+    const startScanning = async () => {
+        if (scanning) return; // Prevent starting multiple scans at once
+        setScanning(true);
+        setError(null);
         try {
-            const reader = new NDEFReader();
-            await reader.scan();
+            // Request NFC permission from the user
+            const nfcReader = new window.NFCReader();
+            await nfcReader.scan();
 
-            reader.onreading = (event) => {
-                const record = event.message.records[0];
-                const textDecoder = new TextDecoder(record.encoding || 'utf-8');
-                const tagText = textDecoder.decode(record.data);
-                setNfcData(tagText);
+            // Start scanning for NFC tags
+            nfcReader.onreading = (event) => {
+                const { serialNumber, message } = event;
+                setNfcData({ serialNumber, message: new TextDecoder().decode(message) });
             };
 
-            reader.onerror = (e) => {
-                console.error('Reading error:', e);
-                setError('Failed to read NFC tag.');
+            nfcReader.onerror = (error) => {
+                setError('Error reading NFC tag: ' + error);
             };
         } catch (err) {
-            console.error('Scan failed:', err);
-            setError('Error starting NFC scan: ' + err.message);
+            setError('Error initializing NFC scan: ' + err.message);
         }
+    };
+
+    const stopScanning = () => {
+        setScanning(false);
     };
 
     return (
         <div>
-            <h2 className="text-xl mb-4">NFC Scanner</h2>
-            <button onClick={handleScan} className="bg-blue-500 text-white px-4 py-2 rounded">
-                Start NFC Scan
-            </button>
-            {nfcData && <p className="mt-4">✅ Scanned NFC Data: {nfcData}</p>}
-            {error && <p className="mt-4 text-red-600">{error}</p>}
+            <h1>NFC Scanner</h1>
+            <div>
+                {error && <p style={{ color: 'red' }}>{error}</p>}
+                {nfcData ? (
+                    <div>
+                        <p><strong>Serial Number:</strong> {nfcData.serialNumber}</p>
+                        <p><strong>Message:</strong> {nfcData.message}</p>
+                    </div>
+                ) : (
+                    <p>No NFC data yet</p>
+                )}
+                <button onClick={startScanning} disabled={scanning}>
+                    {scanning ? 'Scanning...' : 'Start Scanning'}
+                </button>
+                <button onClick={stopScanning} disabled={!scanning}>
+                    Stop Scanning
+                </button>
+            </div>
         </div>
     );
-}
+};
+
+export default NfcScanner;
