@@ -34,7 +34,7 @@ const QRScanner = () => {
             };
         } catch (error) {
             console.error("NFC scan failed:", error);
-            alert("Error scanning NFC.");
+            alert("Error scanning NFC.", error);
         }
     };
 
