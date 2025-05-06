@@ -34,13 +34,13 @@ const QRScanner = () => {
             };
         } catch (error) {
             console.error("NFC scan failed:", error);
-            alert("Error scanning NFC.", error);
+            alert(error);
         }
     };
 
     return (
         <div>
-            <h1>Scan NFC Tag</h1>
+            <h1>Scan NFC Tag test</h1>
             <button onClick={handleScan}>Start NFC Scan</button>
             {nfcData && <p>Scanned NFC Data: {nfcData}</p>}
         </div>
