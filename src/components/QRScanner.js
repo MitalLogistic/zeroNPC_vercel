@@ -1,17 +1,17 @@
-'use client'; // Required for Next.js app directory if using
+'use client';
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 
-const QRScanner = () => {
+export default function NfcScanner() {
     const [nfcData, setNfcData] = useState('');
+    const [error, setError] = useState('');
 
-    const checkNfcAvailability = () => {
-        return 'NDEFReader' in window;
-    };
+    const isNfcSupported = () =>
+        typeof window !== 'undefined' && 'NDEFReader' in window;
 
     const handleScan = async () => {
-        if (!checkNfcAvailability()) {
-            alert("Your browser does not support NFC scanning. Try Chrome on Android.");
+        if (!isNfcSupported()) {
+            setError('❌ NFC is not supported on this browser or device.');
             return;
         }
 
@@ -20,31 +20,30 @@ const QRScanner = () => {
             await reader.scan();
 
             reader.onreading = (event) => {
-                const { message } = event;
-                const record = message.records[0];
-
-                if (record) {
-                    const textDecoder = new TextDecoder(record.encoding || 'utf-8');
-                    const decoded = textDecoder.decode(record.data);
-                    setNfcData(decoded);
-                    alert('NFC Tag Scanned: ' + decoded);
-                } else {
-                    alert('No data found on the NFC tag.');
-                }
+                const record = event.message.records[0];
+                const textDecoder = new TextDecoder(record.encoding || 'utf-8');
+                const tagText = textDecoder.decode(record.data);
+                setNfcData(tagText);
             };
-        } catch (error) {
-            console.error("NFC scan failed:", error);
-            alert(error);
+
+            reader.onerror = (e) => {
+                console.error('Reading error:', e);
+                setError('Failed to read NFC tag.');
+            };
+        } catch (err) {
+            console.error('Scan failed:', err);
+            setError('Error starting NFC scan: ' + err.message);
         }
     };
 
     return (
         <div>
-            <h1>Scan NFC Tag test</h1>
-            <button onClick={handleScan}>Start NFC Scan</button>
-            {nfcData && <p>Scanned NFC Data: {nfcData}</p>}
+            <h2 className="text-xl mb-4">NFC Scanner</h2>
+            <button onClick={handleScan} className="bg-blue-500 text-white px-4 py-2 rounded">
+                Start NFC Scan
+            </button>
+            {nfcData && <p className="mt-4">✅ Scanned NFC Data: {nfcData}</p>}
+            {error && <p className="mt-4 text-red-600">{error}</p>}
         </div>
     );
-};
-
-export default QRScanner;
+}
