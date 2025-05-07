@@ -36,9 +36,8 @@ export default function NfcScanner() {
                     setError('NFC reading error');
                 };
             } else {
+                alert(`NFC is not supported on this device. You can enter data manually.`);
                 // 👇 Simulate scan if no NFC is supported or no tag
-                console.warn('Simulating NFC read...');
-                setMessage('Simulated NFC Tag: Hello from test');
             }
         } catch (err) {
             setError('Error: ' + err.message);
